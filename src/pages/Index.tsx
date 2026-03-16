@@ -207,7 +207,10 @@ export default function Index() {
   return (
     <div className="min-h-screen pb-16">
       {/* Header */}
-      <header className="py-8 text-center px-4">
+      <header className="relative py-8 text-center px-4">
+        <div className="absolute right-4 top-4">
+          <DarkModeToggle />
+        </div>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight">
           UA-Check
         </h1>
