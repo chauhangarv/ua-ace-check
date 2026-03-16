@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { CheckCircle2, XCircle, ArrowRight, Mail, Globe } from "lucide-react";
 import { validateEmail, validateDomain, type ValidationResult } from "@/lib/ua-validator";
+import { DarkModeToggle } from "@/components/DarkModeToggle";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
