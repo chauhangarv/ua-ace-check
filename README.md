@@ -1,109 +1,104 @@
-# UA-Check — Universal Acceptance Validator
+# 🌐 UA-ACE Check — Universal Acceptance Validator
 
-A browser-based tool that checks whether an email address or domain name 
-is compliant with ICANN's Universal Acceptance (UA) standards.
+A browser-based tool that validates whether email addresses and domain names comply with ICANN’s **Universal Acceptance (UA)** standards.
 
-Live: https://ua-ace-check.vercel.app
-
----
-
-## What is Universal Acceptance?
-
-Universal Acceptance ensures that all valid domain names and email 
-addresses — including Internationalized Domain Names (IDNs) in non-Latin 
-scripts — are correctly accepted, validated, and processed by all 
-internet-enabled applications and systems.
-
-Without UA compliance, users with email addresses or domain names in 
-scripts like Hindi, Arabic, Chinese, or Tamil are rejected by systems 
-that only recognize ASCII characters — effectively excluding them from 
-digital services.
+🔗 **Live Demo:** https://ua-ace-check.vercel.app
 
 ---
 
-## Why I Built This
+## 🌍 What is Universal Acceptance?
 
-Across Asia Pacific, governments are rapidly digitising essential 
-services — welfare registration, healthcare, education, civic 
-participation. Many of these systems were built without Universal 
-Acceptance as a design principle, systematically excluding communities 
-whose digital identities exist outside ASCII assumptions.
+Universal Acceptance (UA) ensures that **all valid domain names and email addresses** — including Internationalized Domain Names (IDNs) and non-Latin scripts — are correctly accepted, validated, and processed by internet systems.
 
-This tool was built to:
-- Educate developers and policymakers about UA compliance
-- Demonstrate technically what UA validation looks like in practice
-- Connect the policy gap to a working technical solution
-
-This project connects directly to my ICANN public comment submission on 
-the Draft Guidelines for Advancing UA Adoption (March 2026) and my 
-research paper — *The Illiterate Citizen in a Digital State: Digital 
-Exclusion and the Denial of Social Rights in Rural India*.
+Without UA compliance, users with identities in scripts like Hindi, Arabic, Chinese, or Tamil are often rejected by systems designed only for ASCII — leading to **systemic digital exclusion**.
 
 ---
 
-## What It Validates
+## 🎯 Purpose of This Project
 
-### Email Addresses
-- Exactly one @ symbol (RFC 5321)
-- Unicode local parts — internationalized email (RFC 6531)
-- Total length within 254 bytes (RFC 5321)
-- Valid domain part with IDN support
+Across the Asia-Pacific region, rapid digitisation of public services has not always accounted for Universal Acceptance. This creates barriers in:
 
-### Domain Names
-- Valid TLD — including new gTLDs and IDN TLDs
-- Internationalized characters and Punycode (xn--) encoding (RFC 5890)
-- Label length within 63 bytes (RFC 1035)
-- Total domain length within 253 bytes (RFC 1035)
+- Welfare access  
+- Healthcare systems  
+- Education platforms  
+- Civic participation  
 
----
+This tool is built to:
 
-## Example Test Cases
+- 🧠 Educate developers and policymakers about UA compliance  
+- 🔬 Demonstrate practical implementation of UA validation  
+- 🌉 Bridge the gap between policy and technical systems  
 
-**Valid UA-compliant inputs:**
-- उपयोगकर्ता@उदाहरण.भारत — Hindi email address
-- user@example.academy — new gTLD
-- 用户@例子.广告 — Chinese email address
-- xn--p1ai — Russian IDN domain (Punycode encoded)
+This project aligns with:
 
-**Inputs that expose UA failures in non-compliant systems:**
-- Any email with non-ASCII local part
-- Any domain with TLD longer than 6 characters
-- Any IDN domain in non-Latin script
+- ICANN Public Comment on *Draft Guidelines for Advancing UA Adoption* (March 2026)  
+- Research: *The Illiterate Citizen in a Digital State (2026)*  
 
 ---
 
-## Technical Standards Referenced
+## ✨ Features
 
-- RFC 5321 — Simple Mail Transfer Protocol
-- RFC 6531 — SMTP Extension for Internationalized Email
-- RFC 5890 — Internationalized Domain Names for Applications (IDNA)
-- RFC 1035 — Domain Names Implementation and Specification
-- ICANN Universal Acceptance Steering Group (UASG) Guidelines
-
----
-
-## Built With
-
-- TypeScript
-- React
-- Vercel
+- ✅ Email validation with internationalization support (EAI)
+- 🌐 Domain validation with IDN and Punycode support
+- 📏 RFC-compliant length and structure checks
+- ⚡ Real-time browser-based validation
+- 🧩 Extendable architecture for additional checks
 
 ---
 
-## Author
+## 🔍 What It Validates
 
-**Garv Chauhan**
-B.Tech - M.Tech CSE (Cybersecurity)
-National Forensic Sciences University, New Delhi
-NetMission Asia Research Fellow
+### 📧 Email Addresses
+- Exactly one `@` symbol (**RFC 5321**)
+- Unicode local parts (**RFC 6531**)
+- Maximum length: 254 bytes
+- Valid domain with IDN support
 
-ICANN Public Comment on UA Draft Guidelines: March 2026
-Research: The Illiterate Citizen in a Digital State (2026)
+### 🌐 Domain Names
+- Valid TLDs (including new gTLDs and IDNs)
+- Unicode + Punycode (`xn--`) encoding (**RFC 5890**)
+- Label length ≤ 63 bytes (**RFC 1035**)
+- Total length ≤ 253 bytes
 
 ---
 
-## Related Work
+## 🧪 Example Test Cases
 
-- ICANN UA Draft Guidelines Public Comment — March 2026
-- CircleID Article — Universal Acceptance and India's Welfare Crisis
-- Research Paper — The Illiterate Citizen in a Digital State
+### ✅ UA-Compliant Inputs
+- `उपयोगकर्ता@उदाहरण.भारत` (Hindi)
+- `用户@例子.广告` (Chinese)
+- `user@example.academy` (new gTLD)
+- `xn--p1ai` (Punycode encoded IDN)
+
+### ❌ Common Failure Cases (Non-UA Systems)
+- Emails with non-ASCII local parts rejected
+- Domains with long or new TLDs rejected
+- IDN domains not supported
+
+---
+
+## 📚 Standards Referenced
+
+- RFC 5321 — Simple Mail Transfer Protocol  
+- RFC 6531 — Internationalized Email (EAI)  
+- RFC 5890 — IDNA (Internationalized Domain Names)  
+- RFC 1035 — Domain Name Specifications  
+- ICANN Universal Acceptance Steering Group (UASG)
+
+---
+
+## 🛠️ Tech Stack
+
+- TypeScript  
+- React  
+- Vercel  
+
+---
+
+## 🚀 Getting Started
+
+```bash
+git clone https://github.com/chauhangarv/ua-ace-check.git
+cd ua-ace-check
+npm install
+npm run dev
